@@ -149,7 +149,7 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Finne's Blog"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Finne's Blog"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Finne's Blog"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Finne's Blog"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="search" type="application/opensearchdescription+xml" href="C:\Users\hr\OneDrive\文档\blog\source\opensearch.xml" title="Finne's Blog">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
     <meta property="og:title" content="Hello World | Finne&#39;s Blog"><meta property="og:site_name" content="Finne&#39;s Blog"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/07/20/hello-world/"><meta property="og:locale" content="en"><meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick - finne - Finne&#39;s Blog"><meta property="article:published_time" content="2020-07-20T00:23:56.386Z"><meta property="article:modified_time" content="2020-07-20T00:23:56.386Z"><meta property="og:updated_time" content="2020-07-20T00:23:56.386Z"><meta property="article:author" content="finne"><meta name="twitter:card" content="summary">
@@ -489,6 +489,55 @@
                 
                     <!-- # Comment # -->
                     
+                        <div class="card-footer post-comment">
+                            <div id="disqus_thread"></div>
+
+<div class="btn_click_load"> 
+    <button id="disqus_click_btn" class="btn">Read the comment (Make sure that disqus can load properly)</button>
+</div>
+
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2020/07/20/hello-world/'; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2020/07/20/hello-world/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script id="disqus-lazy-load-script">
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://disqus.com/next/config.json', true);
+    xhr.timeout = 4000;
+    xhr.send();
+    xhr.onload = function() {
+        if(this.status == 200||this.status == 304){
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//finne.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+            document.getElementById('disqus_click_btn').setAttribute("style", "display:none")
+        }
+    };
+    xhr.ontimeout = function(e) {
+        document.getElementById('disqus_click_btn').setAttribute("style", "display:block");
+    };
+    xhr.onerror = function(e) {
+        document.getElementById('disqus_click_btn').setAttribute("style", "display:block");
+    };
+    document.getElementById('disqus_click_btn').onclick=function() { //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//finne.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        document.getElementById('disqus_click_btn').setAttribute("style", "display:none")
+    };
+</script>
+
+                        </div>
+                    
                 
             </div>
         </div>
@@ -556,6 +605,10 @@ console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c 
 
 
 <!-- Comment -->
+
+    
+        
+    
 
 
 <!-- ### Custom Footer ### -->
